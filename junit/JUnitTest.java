@@ -1,33 +1,27 @@
 import static org.junit.Assert.*;
 
-import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 
-import org.apache.commons.io.FileUtils;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class JUnitTest {  
-  private static WebDriver driver;  
+public class JUnitSample {  
+  private WebDriver driver;  
 
   @Before
-  public static void setUp() throws Exception {  
+  public void setUp() throws Exception {  
     DesiredCapabilities capability = DesiredCapabilities.chrome();
     capability.setPlatform(Platform.MAC);
     capability.setVersion("20.0");
     driver = new RemoteWebDriver(
-      new URL("http://USERNAME:ACCESS_KEY@hub.browserstack.com/wd/hub"),
+      new URL("http://<username>:<access_key>@hub.browserstack.com/wd/hub"),
       capability
       );
   }  
@@ -43,7 +37,7 @@ public class JUnitTest {
   }  
 
   @After
-  public static void tearDown() throws Exception {  
+  public void tearDown() throws Exception {  
     driver.quit();  
   }  
 }
