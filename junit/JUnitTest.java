@@ -18,8 +18,8 @@ public class JUnitTest {
   @Before
   public void setUp() throws Exception {  
     DesiredCapabilities capability = DesiredCapabilities.chrome();
-    capability.setPlatform(Platform.MAC);
-    capability.setVersion("20.0");
+    capability.setPlatform(Platform.WINDOWS);
+    capability.setCapability("build", "JUnit - Sample");
     driver = new RemoteWebDriver(
       new URL("http://<username>:<access_key>@hub.browserstack.com/wd/hub"),
       capability
