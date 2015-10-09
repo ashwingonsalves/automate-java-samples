@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class JUnitSample {  
+public class JUnitTest {  
   private WebDriver driver;  
 
   @Before
